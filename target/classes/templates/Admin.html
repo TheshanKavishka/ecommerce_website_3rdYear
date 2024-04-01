@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">      
+    <link href="../static/CSS/style.css" th:href="@{/CSS/style.css}" rel="stylesheet">
+    <title>Admin</title>
+    <style>
+    .card{
+        background: black;
+        border: 1px solid white;
+        box-shadow: 0 0 60px rgba(0, 181, 204, 1);
+    }
+    .text-center{
+        background: black;
+    }
+    </style>
+</head>
+<body>
+<div class="logo">
+        <img th:src="@{/Images/logo.png}" src="../static/Images/logo.png" alt="logo" witdth="100px" height="100px">
+    </div>
+
+    <div class="header">
+        <img class="active" th:src="@{/Images/01.jpg}" src="../static/Images/01.jpg" alt="Image 1">
+        <img th:src="@{/Images/02.jpg}" src="../static/Images/02.jpg" alt="Image 2">
+        <img th:src="@{/Images/03.jpg}" src="../static/Images/03.jpg" alt="Image 3">
+        <img th:src="@{/Images/04.jpg}" src="../static/Images/04.jpg" alt="Image 4">
+        <img th:src="@{/Images/05.jpg}" src="../static/Images/05.jpg" alt="Image 5">
+
+        
+
+        <nav id="navigation">
+          <ul>
+            <li><a th:href="@{/admin}" href="#">AdminHome</a></li>
+            <li><a th:href="@{/home}" href="#">Home</a></li>
+            <li><a th:href="@{/logout}" href="#">Logout</a></li>
+          </ul>
+        </nav>
+    </div> 
+    <div class="text-center">
+        <h1 class="display-4">Welcome back, Admin</h1>
+        <p>Easily manage your data </p>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 pt-3" >
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Categories</h4>
+                    <p class="card-text">Manage the categories here.</p>
+                    <a href="#" th:href="@{/admin/categories}" class="card-link btn btn-primary">Manage</a>
+
+                </div>
+            </div>
+        </div>    
+
+        <div class="col-sm-3 pt-3" >
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Products</h4>
+                    <p class="card-text">Manage all the products here.</p>
+                    <a href="#" th:href="@{/admin/products}" class="card-link btn btn-primary">Manage</a>
+
+                </div>
+            </div>
+        </div>
+<br><br><br>
+    </div>
+</div>
+<script type="text/javascript" src=" " th:src="@{/js/script.js}" ></script>
+</body>
+</html>

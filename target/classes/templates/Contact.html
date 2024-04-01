@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+  <link href="../static/CSS/style.css" th:href="@{/CSS/style.css}" rel="stylesheet">
+  <title>ContactUs</title>
+  <style>
+
+      
+    
+	main {
+	  max-width: 600px;
+	  margin: 20px auto;
+	  padding: 20px;
+	}
+
+
+	.contact-form {
+	  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	  border-radius: 5px;
+	  padding: 30px;
+	}
+
+	.contact-form h2 {
+	  font-size: 24px;
+	  margin-bottom: 20px;
+	}
+
+	.form-group {
+	  margin-bottom: 20px;
+	}
+
+	.form-group label {
+	  display: block;
+	  font-size: 16px;
+	  margin-bottom: 5px;
+	}
+
+	.form-group input,
+	.form-group textarea {
+	  width: 100%;
+	  padding: 10px;
+	  font-size: 16px;
+	  border: 1px solid #ccc;
+	  border-radius: 5px;
+	}
+
+	.form-group textarea {
+	  resize: vertical;
+	}
+
+	.submit-button {
+	  display: inline-block;
+	  padding: 10px 20px;
+	  background-color: #333;
+	  color: #fff;
+	  text-decoration: none;
+	  font-weight: bold;
+	  border-radius: 5px;
+	  transition: background-color 0.3s;
+	  cursor: pointer;
+	}
+
+	.submit-button:hover {
+	  background-color: #555;
+	}
+
+
+  </style>
+</head>
+<body>
+    <div class="logo">
+        <img th:src="@{/Images/logo.png}" src="../static/Images/logo.png" alt="logo" witdth="100px" height="100px">
+    </div>
+
+    <div class="header">
+        <img class="active" th:src="@{/Images/01.jpg}" src="../static/Images/01.jpg" alt="Image 1">
+        <img th:src="@{/Images/02.jpg}" src="../static/Images/02.jpg" alt="Image 2">
+        <img th:src="@{/Images/03.jpg}" src="../static/Images/03.jpg" alt="Image 3">
+        <img th:src="@{/Images/04.jpg}" src="../static/Images/04.jpg" alt="Image 4">
+        <img th:src="@{/Images/05.jpg}" src="../static/Images/05.jpg" alt="Image 5">
+
+        
+
+        <nav id="navigation">
+          <ul>
+            <li><a th:href="@{/home}" href="#">Home</a></li>
+            <li><a th:href="@{/contacts}" href="#">Contacts</a></li>
+            <li><a th:href="@{/feedback}" href="#">Feedback</a></li>
+            <li><a th:href="@{/logout}" href="#">Logout</a></li>
+          </ul>
+        </nav>
+    </div>  
+  <main>
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+  <div class="footer">
+  <div class="row">
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <a href="#"><i class="fa fa-instagram"></i></a>
+  <a href="#"><i class="fa fa-youtube"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  </div>
+
+  <div class="row">
+  <ul>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Our Services</a></li>
+  <li><a href="#">Privacy Policy</a></li>
+  <li><a href="#">Terms & Conditions</a></li>
+  <li><a href="#">Career</a></li>
+  </ul>
+  </div>
+
+  <div class="row">
+  INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh Motors
+  </div>
+  </div>
+  </footer>
+  <script type="text/javascript" src=" " th:src="@{/js/script.js}" ></script>
+  
+</body>
+</html>

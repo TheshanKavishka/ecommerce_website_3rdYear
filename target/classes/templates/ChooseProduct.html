@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link href="../static/CSS/style.css" th:href="@{/CSS/vehicle.css}" rel="stylesheet">
+	<title>Choose Product</title>
+	<style>
+		.card-body{
+			background-color:black;
+			color:white;
+		}
+		.card{
+			box-shadow: 0 0 60px rgba(0, 181, 204, 1);
+		}	
+	</style>
+</head>
+<body>
+	<header class="bg-black py-3">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-md-4">
+          
+        </div>
+        <div class="col-md-4">
+          <!-- Add the search bar -->
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <!-- Add the "Add to Cart" button -->
+          <a th:href="@{/cart}" href="#"><button class="btn btn-primary float-right">
+            <i class="fas fa-shopping-cart">&nbsp;&nbsp;<span id="cart-item-count" th:text="${cartCount}">0</span></i></button></a>
+        </div>
+      </div>
+    </div>
+  </header>
+	<div class="logo">
+        <img th:src="@{/Images/logo.png}" src="../static/Images/logo.png" alt="logo" witdth="100px" height="100px">
+    </div>
+
+    <div class="header">
+        <img class="active" th:src="@{/Images/01.jpg}" src="../static/Images/01.jpg" alt="Image 1">
+        <img th:src="@{/Images/02.jpg}" src="../static/Images/02.jpg" alt="Image 2">
+        <img th:src="@{/Images/03.jpg}" src="../static/Images/03.jpg" alt="Image 3">
+        <img th:src="@{/Images/04.jpg}" src="../static/Images/04.jpg" alt="Image 4">
+        <img th:src="@{/Images/05.jpg}" src="../static/Images/05.jpg" alt="Image 5">
+
+        
+
+        <nav id="navigation">
+          <ul>
+            <li><a th:href="@{/home}" href="#">Home</a></li>
+            <li><a th:href="@{/contacts}" href="#">Contacts</a></li>
+            <li><a th:href="@{/feedback}" href="#">Feedback</a></li>
+            <li><a th:href="@{/logout}" href="#">Logout</a></li>
+          </ul>
+        </nav>
+    </div>
+
+	<div class="container" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-sm-3">
+            <h4>Categories</h4>
+            <ul class="list-group">
+                <a th:href="@{/chooseproduct}"><li class="list-group-item">All Products</li></a>
+                <a href="" th:each="category, iStat : ${categories}"
+                   th:href="@{/chooseproduct/category/{id}(id=${category.id})}"><li
+                               class="list-group-item" th:text="${category.name}"></li></a>
+
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <div class="card" style="margin-top: 20px" th:each="product : ${products}">
+                <div class="row no-gutters">
+                    <div class="col-sm-5 d-flex justify-content-center">
+                        <img class="" height="200px" width="150px" th:src="@{${'/productImages/' + product.imageName}}" th:alt="${product.name}">
+                    </div>
+                    <div class="col-sm-7 d-flex justify-content-center">
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${product.name}"></h5>
+                            <h4>Rs. <span th:text="${product.price}"></span></h4>
+                            <a href="#" th:href="@{/chooseproduct/viewproduct/{id}(id=${product.id})}" class="btn btn-primary">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	
+	<footer>
+  <div class="footer">
+  <div class="row">
+  <ul>
+  <li><a href="#">Contact us</a></li>
+  <li><a href="#">Our Services</a></li>
+  <li><a href="#">Privacy Policy</a></li>
+  <li><a href="#">Terms & Conditions</a></li>
+  <li><a href="#">Career</a></li>
+  </ul>
+  </div>
+
+  <div class="row2">
+  INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh Motors
+  </div>
+  </div>
+  </footer>
+  <script type="text/javascript" th:src="@{/js/script.js}" src="../static/js/script.js"></script>
+</body>
+</html>
